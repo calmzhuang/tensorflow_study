@@ -1,0 +1,7 @@
+*.idea
+*venv
+*tar.gz
+*.pyc
+*data
+*path
+*tmp
