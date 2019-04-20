@@ -38,12 +38,17 @@ def preprocess_for_train(image, height, width, bbox=None):
     return distorted_image
 
 
-image_raw_data = tf.gfile.FastGFile("./path/to/picture/test.png", "rb").read()
-with tf.Session() as sess:
-    img_data = tf.image.decode_png(image_raw_data, channels=3)
-    boxes = tf.constant([[[0.05, 0.05, 0.9, 0.7], [0.35, 0.47, 0.5, 0.56]]])
-    print(sess.run(img_data))
-    for i in range(6):
-        result = preprocess_for_train(img_data, 299, 299, boxes)
-        plt.imshow(result.eval())
-        plt.show()
+def main():
+    image_raw_data = tf.gfile.FastGFile("./path/to/picture/test.png", "rb").read()
+    with tf.Session() as sess:
+        img_data = tf.image.decode_png(image_raw_data, channels=3)
+        boxes = tf.constant([[[0.05, 0.05, 0.9, 0.7], [0.35, 0.47, 0.5, 0.56]]])
+        print(sess.run(img_data))
+        for i in range(6):
+            result = preprocess_for_train(img_data, 299, 299, boxes)
+            plt.imshow(result.eval())
+            plt.show()
+
+
+if __name__ == '__main__':
+    main()

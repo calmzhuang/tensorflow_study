@@ -16,7 +16,7 @@ conv2_size = 5
 fc_size = 512
 
 
-def inference(input_tensor, regularizer, train=False):
+def inference(input_tensor, regularizer=None, train=False):
     with tf.variable_scope('layer1-conv1'):
         conv1_weights = tf.get_variable("weight", [conv1_size, conv1_size, num_channels, conv1_deep],
                                         initializer=tf.truncated_normal_initializer(stddev=0.1))
