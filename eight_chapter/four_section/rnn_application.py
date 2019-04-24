@@ -1,11 +1,9 @@
-import matplotlib
-matplotlib.use('PS')
-from matplotlib import pyplot as plt
 import numpy as np
 import tensorflow as tf
 
-import matplotlib as mpl
-mpl.use('Agg')
+# import matplotlib as mpl
+# mpl.use('Agg')
+from matplotlib import pyplot as plt
 
 num_units = 30
 num_layers = 2
