@@ -31,7 +31,7 @@ class PTBModel(object):
         dropout_keep_prob = lstsm_keep_prob if is_training else 1.0
         lstm_cells = [
             tf.nn.rnn_cell.DropoutWrapper(
-                tf.nn.rnn_cell.BasicLSTMCell(hidden_size),
+                tf.nn.rnn_cell.LSTMCell(hidden_size),
                 output_keep_prob=dropout_keep_prob
             )
             for _ in range(num_layers)

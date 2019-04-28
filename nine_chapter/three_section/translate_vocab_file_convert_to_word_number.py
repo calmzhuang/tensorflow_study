@@ -1,10 +1,9 @@
 import codecs
-import sys
 
 
-raw_data = "../../path/to/data/ptb.test.txt"
-vocab_file = "ptb.vocab"
-output_data = "ptb.test"
+raw_data = "../../path/to/data/train.txt.zh"
+vocab_file = "ptb-zh.vocab"
+output_data = "ptb.target"
 
 with codecs.open(vocab_file, "r", "utf-8") as f_vocab:
     vocab = [w.strip() for w in f_vocab.readlines()]
