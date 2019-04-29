@@ -91,7 +91,7 @@ def run_epoch(session, model, batches, train_op, output_log, step):
     for x, y in batches:
         cost, state, _ = session.run(
             [model.cost, model.final_state, train_op],
-            {model.input_data: x, model.targets: y, model.initial_state:state}
+            {model.input_data: x, model.targets: y, model.initial_state: state}
         )
         total_costs += cost
         iters += model.num_steps
