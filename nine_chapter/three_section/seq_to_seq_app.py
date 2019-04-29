@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-checkpoint_path = "../../path/to/seq2seq_ckpt-9000"
+checkpoint_path = "./seq2seq_checkpoint/seq2seq_ckpt-9000"
 
 hidden_size = 1024
 num_layers = 2

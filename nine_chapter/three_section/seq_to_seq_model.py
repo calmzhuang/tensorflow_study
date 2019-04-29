@@ -1,9 +1,9 @@
 import tensorflow as tf
 
 
-src_train_data = "../../path/to/data/ptb.train"
-trg_train_data = "../../path/to/data/ptb.target"
-checkpoint_path = "../../path/to/seq2seq_ckpt"
+src_train_data = "./ptb.train"
+trg_train_data = "./ptb.target"
+checkpoint_path = "./seq2seq_checkpoint/seq2seq_ckpt"
 hidden_size = 1024
 num_layers = 2
 src_vocab_size = 10000
@@ -117,7 +117,7 @@ def make_src_trg_dataset(src_path, trg_path, batch_size):
     def make_trg_input(src_tuple, trg_tuple):
         ((src_input, src_len), (trg_label, trg_len)) = (src_tuple, trg_tuple)
         trg_input = tf.concat([[sos_id], trg_label[: -1]], axis=0)
-        return (src_input, src_len), (trg_input, trg_label), trg_len
+        return (src_input, src_len), (trg_input, trg_label, trg_len)
     dataset = dataset.map(make_trg_input)
 
     dataset = dataset.shuffle(10000)

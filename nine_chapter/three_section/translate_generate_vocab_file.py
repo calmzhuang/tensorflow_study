@@ -18,8 +18,8 @@ sorted_word_to_cnt = sorted(counter.items(),
 sorted_words = [x[0] for x in sorted_word_to_cnt]
 
 sorted_words = ["<unk>", "<sos>", "<eos>"] + sorted_words
-if len(sorted_words) > 10000:
-    sorted_words = sorted_words[: 10000]
+if len(sorted_words) > 4000:
+    sorted_words = sorted_words[: 4000]
 
 with codecs.open(vacab_output, 'w', 'utf-8') as file_output:
     for word in sorted_words:
