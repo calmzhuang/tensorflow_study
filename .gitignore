@@ -5,3 +5,5 @@
 *data
 *path
 *tmp
+*seq2seq_checkpoint
+*attention_checkpoint
