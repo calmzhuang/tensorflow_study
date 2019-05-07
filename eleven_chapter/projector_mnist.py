@@ -14,7 +14,7 @@ TRAINING_STEPS = 10000
 MOVING_AVERAGE_DECAY = 0.99
 
 LOG_DIR = 'log'
-SPRITE_FILE = 'mnist_sprite.jpg'
+SPRITE_FILE = 'mnist_sprite.png'
 META_FIEL = "mnist_meta.tsv"
 TENSOR_NAME = "FINAL_LOGITS"
 
@@ -93,9 +93,10 @@ def visualisation(final_result):
 
 
 def main(argv=None):
-    mnist = input_data.read_data_sets("../../datasets/MNIST_data", one_hot=True)
+    mnist = input_data.read_data_sets("../tmp/data", one_hot=True)
     final_result = train(mnist)
     visualisation(final_result)
+
 
 if __name__ == '__main__':
     main()

@@ -34,7 +34,7 @@ def nn_layer(input_tensor, input_dim, output_dim, layer_name, act=tf.nn.relu):
 
 
 def main():
-    mnist = input_data.read_data_sets("../../datasets/MNIST_data", one_hot=True)
+    mnist = input_data.read_data_sets("../tmp/data", one_hot=True)
 
     with tf.name_scope('input'):
         x = tf.placeholder(tf.float32, [None, 784], name='x-input')

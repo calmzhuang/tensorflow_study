@@ -6,7 +6,7 @@ import os
 from tensorflow.examples.tutorials.mnist import input_data
 
 LOG_DIR = 'log'
-SPRITE_FILE = 'mnist_sprite.jpg'
+SPRITE_FILE = 'mnist_sprite.png'
 META_FIEL = "mnist_meta.tsv"
 
 
@@ -31,7 +31,7 @@ def create_sprite_image(images):
     return spriteimage
 
 
-mnist = input_data.read_data_sets("../../datasets/MNIST_data", one_hot=False)
+mnist = input_data.read_data_sets("../tmp/data", one_hot=False)
 
 to_visualise = 1 - np.reshape(mnist.test.images, (-1, 28, 28))
 sprite_image = create_sprite_image(to_visualise)
